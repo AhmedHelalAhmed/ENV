@@ -1,0 +1,6 @@
+# for rvm
+PATH=$PATH:.rvm/bin
+
+source $ZSH/oh-my-zsh.sh
+
+
