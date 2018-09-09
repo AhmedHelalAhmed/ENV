@@ -130,7 +130,8 @@ export NVM_DIR="$HOME/.nvm"
 
 
 
-#you need sudo apt-get intall xclip
+#you need sudo apt install xclip
+
 alias cpwd='pwd | xclip -selection c'
 
 #phpunit
