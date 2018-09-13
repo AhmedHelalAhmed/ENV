@@ -173,3 +173,7 @@ PS1=${PS1}'\[\033[1;32m\]➜  \[\033[0m\]'
 
 #to fix nvm error in vscode
 exec nvm use --delete-prefix v4.1.1 --silent
+
+#custom the title of the terminal
+export PROMPT_COMMAND="printf \"\033]0;%s\007\" \"You Can Do It\""
+
