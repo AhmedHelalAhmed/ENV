@@ -130,7 +130,8 @@ export NVM_DIR="$HOME/.nvm"
 
 
 
-#you need sudo apt-get intall xclip
+#you need sudo apt install xclip
+
 alias cpwd='pwd | xclip -selection c'
 
 #phpunit
@@ -155,7 +156,9 @@ exec /usr/bin/zsh
 export PATH="/home/ahmedhelal/Komodo-Edit-11/bin:$PATH"
 
 #custom terminal symbol
-PS1=" $ "
+PS1='You are in : [\w]\n $ '
+#PS1='\u@\h:\w\$ '
+
 
 #to fix nvm error in vscode
 exec nvm use --delete-prefix v4.1.1 --silent

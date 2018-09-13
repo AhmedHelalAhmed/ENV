@@ -1,15 +1,8 @@
 #you need sudo apt-get intall xclip
 alias cpwd='pwd | xclip -selection c'
 
-#phpunit
-alias phpunit='vendor/bin/phpunit'
-   
-
-
 #heroku
 alias h='/snap/bin/heroku'
-
-
 
 # for rvm
 PATH=$PATH:.rvm/bin
@@ -19,11 +12,9 @@ PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
 export PATH
 exec /usr/bin/zsh
 
-#Komodo-Edit
-export PATH="/home/ahmedhelal/Komodo-Edit-11/bin:$PATH"
-
 #custom terminal symbol
-PS1=" $ "
+PS1=' \w  <- '
+#PS1='\u@\h:\w\$ '
 
 #to fix nvm error in vscode
 exec nvm use --delete-prefix v4.1.1 --silent
