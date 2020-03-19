@@ -30,3 +30,6 @@ alias pf='vendor/bin/phpunit --filter '
 
 #laravel
 alias laravel='composer create-project --prefer-dist laravel/laravel'
+
+# laravel php artisan 
+alias a='php artisan'

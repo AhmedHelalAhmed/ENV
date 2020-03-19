@@ -43,6 +43,9 @@ PATH=$PATH:.rvm/bin
 PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
 
 export PATH
+
+# laravel php artisan 
+alias a='php artisan'
 exec /usr/bin/zsh
 
 
