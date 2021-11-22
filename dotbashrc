@@ -50,3 +50,151 @@ exec /usr/bin/zsh
 
 
 
+#new terminal
+PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
+export PATH
+#exec /usr/bin/zsh
+#new terminal
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/ahmedhelalahmed/google-cloud-sdk/path.bash.inc' ]; then . '/home/ahmedhelalahmed/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/ahmedhelalahmed/google-cloud-sdk/completion.bash.inc' ]; then . '/home/ahmedhelalahmed/google-cloud-sdk/completion.bash.inc'; fi
+
+
+# custom functions
+comme () {
+	git add --all
+	if (($# > 1))
+	then
+		params='' 
+		for i in $*
+		do
+			params=" $params $i" 
+		done
+		git commit -m "$params"
+	else
+		git commit -m "$1"
+	fi
+}
+
+
+# phpunit
+alias phpunit='vendor/bin/phpunit'
+
+# custom the title of the terminal
+PROMPT_COMMAND="printf \"\033]0;%s\007\" \"You Can Do It\""
+
+# custom terminal symbol
+PS1='\[\033[1;34m\]pwd ⇒ (\w)\n'
+PS1=${PS1}'\[\033[1;36m\]whoami ⇒ (\u)\n'
+PS1=${PS1}'\[\033[1;33m\]hostname ⇒ (\h)\n'
+PS1=${PS1}'\[\033[1;31m\]git branch ⇒ $(__git_ps1)\n'
+PS1=${PS1}'\[\033[1;32m\]➜  \[\033[0m\]'
+#PS1='\u@\h:\w\$ '
+
+
+# custom the title of the terminal
+export PROMPT_COMMAND="printf \"\033]0;%s\007\" \"You Can Do It\""
+
+#laravel
+#alias laravel='composer create-project --prefer-dist laravel/laravel' # done by bash script
+
+
+# PHP
+alias phpunit="vendor/bin/phpunit"
+alias phpunitw="phpunit-watcher watch"
+alias a="php artisan"
+alias c="composer"
+alias cu="composer update"
+alias cr="composer require"
+alias ci="composer install"
+alias cda="composer dump-autoload -o"
+alias hostfile="sudo gedit /etc/hosts"
+alias a2r="sudo /etc/init.d/apache2 restart"
+alias deploy='envoy run deploy'
+alias deploy-code='envoy run deploy-code'
+alias mfs='php artisan migrate:fresh --seed'
+alias nah='git reset --hard;git clean -df'
+alias p="phpunit"
+alias pf="phpunit --filter "
+alias d="php artisan dusk"
+alias df="php artisan dusk --filter"
+alias sshconfig="gedit ~/.ssh/config"
+alias copykey='command cat ~/.ssh/id_rsa.public | pbcopy'
+
+# JavaScript
+alias jest="./node_modules/.bin/jest"
+
+# Git
+alias gc="git checkout"
+alias gpo="git push origin"
+alias gm="git merge"
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+# Fast open
+alias o="open ."
+
+# Fast open
+alias t="gnome-terminal"
+alias tx="tilix >> /dev/null"
+
+# List all files colorized in long format
+alias l="ls -laF"
+
+# PhpStorm
+# alias phpstorm='open -a /Applications/PhpStorm.app "`pwd`"'
+
+# Redis
+# alias flush-redis="redis-cli FLUSHALL"
+
+# VSCode
+# alias code='open -a "/Applications/Visual Studio Code.app" "`pwd`"'
+
+# Show/hide hidden files in Finder
+alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+# IP addresses
+alias ip="curl https://diagnostic.opendns.com/myip ; echo"
+alias localip="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+
+# Flush Directory Service cache
+alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
+
+# Lock the screen
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+# Empty the Trash on all mounted volumes and the main HDD
+# Also, clear Apple’s System Logs to improve shell startup speed
+alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
+
+# Enable aliases to be sudo’ed
+alias sudo='sudo '
+
+# Scape webpage
+alias scrape="scrapeUrl"
+
+# Switch NPM
+alias npmnpm="npm config set registry https://registry.npmjs.org"
+
+
+
+
+
+alias npmspatie="npm config set registry https://npm.spatie.be"
+
+# Restart touch bar
+alias touchbar="killall ControlStrip"
+
+alias wip="comme wip"
+# Fix issue in tilix
+# https://gnunn1.github.io/tilix-web/manual/vteconfig/
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi
+
